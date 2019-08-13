@@ -9,6 +9,7 @@ subparsers = parser.add_subparsers()
 
 parser_flashos = subparsers.add_parser('flashos', help='see `flashos -h`')
 parser_flashos.add_argument('-p', '--port', help='Serial port you want to flash (like: `/dev/tty.SLAB_USBtoUART`)')
+parser_flashos.add_argument('-b', '--bps', help='Speen in Serial communication(bps)', default='921600')
 parser_flashos.set_defaults(handler=flashos.command)
 
 parser_eraseos = subparsers.add_parser('eraseos', help='see `eraseos -h`')
