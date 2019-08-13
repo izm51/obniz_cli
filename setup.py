@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='obniz-cli',
+    name='obniz_cli',
     version='0.0.1',
     description='cli tool for obnizOS setup',
     # url='',
