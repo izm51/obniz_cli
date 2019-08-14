@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "24b56ba1d5537f82dddec63d9ba1399f5dc5ac4350e0210fab9f626781cf3439"
+            "sha256": "1feebd3e39a9a3caa8561e85c106273990ce69afbba1d4b0eb952f3018581312"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.7"
+            "python_version": "3.5"
         },
         "sources": [
             {
@@ -16,6 +16,20 @@
         ]
     },
     "default": {
+        "certifi": {
+            "hashes": [
+                "sha256:046832c04d4e752f37383b628bc601a7ea7211496b4638f6514d0e5b9acc4939",
+                "sha256:945e3ba63a0b9f577b1395204e13c3a231f9bc0223888be653286534e5873695"
+            ],
+            "version": "==2019.6.16"
+        },
+        "chardet": {
+            "hashes": [
+                "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae",
+                "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"
+            ],
+            "version": "==3.0.4"
+        },
         "ecdsa": {
             "hashes": [
                 "sha256:20c17e527e75acad8f402290e158a6ac178b91b881f941fc6ea305bfdfb9657c",
@@ -30,13 +44,12 @@
             "index": "pypi",
             "version": "==2.7"
         },
-        "obniz-cli": {
+        "idna": {
             "hashes": [
-                "sha256:2c5040f17898f74b28cc7c8725785c251a05c2d23dc6d7426e642a5b953e381b",
-                "sha256:bd3a52f022ec9fd577866dabe5574d479bd6a3a14f82d666f7ecd171a9952da3"
+                "sha256:c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407",
+                "sha256:ea8b7f6188e6fa117537c3df7da9fc686d485087abf6ac197f9c46432f7e4a3c"
             ],
-            "index": "pypi",
-            "version": "==0.0.1"
+            "version": "==2.8"
         },
         "pyaes": {
             "hashes": [
@@ -50,6 +63,21 @@
                 "sha256:e0770fadba80c31013896c7e6ef703f72e7834965954a78e71a3049488d4d7d8"
             ],
             "version": "==3.4"
+        },
+        "requests": {
+            "hashes": [
+                "sha256:11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4",
+                "sha256:9cf5292fcd0f598c671cfc1e0d7d1a7f13bb8085e9a590f48c010551dc6c4b31"
+            ],
+            "index": "pypi",
+            "version": "==2.22.0"
+        },
+        "urllib3": {
+            "hashes": [
+                "sha256:b246607a25ac80bedac05c6f282e3cdaf3afb65420fd024ac94435cabe6e18d1",
+                "sha256:dbe59173209418ae49d485b87d1681aefa36252ee85884c31346debd19463232"
+            ],
+            "version": "==1.25.3"
         }
     },
     "develop": {}

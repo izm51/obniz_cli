@@ -3,6 +3,8 @@ import sys
 import tempfile
 import subprocess
 
+import requests
+
 from . import util
 
 def command(args):
@@ -15,15 +17,21 @@ def command(args):
     print()
     ## 一時ファイルにobnizOSをクローンしてくる
     with tempfile.TemporaryDirectory() as dirname:
-        proc = subprocess.run(
-            "git clone git@github.com:obniz/obnizos-esp32w.git",
-            shell=True,
-            cwd=dirname
-        )
+        filenames = ['bootloader.bin', 'obniz.bin', 'partitions.bin']
+        for file in filenames:
+            print("Downloading {}...".format(file))
+            resp = requests.get("https://raw.github.com/obniz/obnizos-esp32w/master/" + file)
+            save_to = os.path.join(dirname, file)
+            if resp.ok:
+                with open(save_to, 'wb') as save_file:
+                    save_file.write(resp.content)
+            else:
+                print("Error: failed to download {}.".format(file))
+                sys.exit(1)
         # obnizOSの書き込み
         print()
         proc = subprocess.run(
             "esptool.py --port {} -b {} --after hard_reset write_flash 0x1000 bootloader.bin 0x10000 obniz.bin 0x8000 partitions.bin".format(selected_port, args.bps),
             shell=True,
-            cwd=os.path.join(dirname, "obnizos-esp32w")
+            cwd=dirname
         )

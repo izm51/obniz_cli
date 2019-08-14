@@ -5,12 +5,12 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name='obniz_cli',
-    version='0.0.3',
+    version='0.0.4',
     description='cli tool for obnizOS setup',
     long_description=long_description,
     long_description_content_type="text/markdown",
     # url='',
-    install_requires=["esptool"],
+    install_requires=["esptool", "requests"],
     py_modules=['obniz_cli'],
     packages=setuptools.find_packages(),
     entry_points={

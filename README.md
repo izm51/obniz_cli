@@ -1,5 +1,5 @@
 # obniz_cli
-`obniz_cli` is cli tool for obnizOS(for ESP32) insatll.
+`obniz_cli` is cli tool for obnizOS(for ESP32) install.
 
 ## Installation
 Using pip,

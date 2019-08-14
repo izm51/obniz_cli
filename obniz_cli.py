@@ -1,4 +1,7 @@
 import sys
+if sys.version_info[0] == 2:
+    print("Error: Your Python is version {}.{}.{}. You need 3.5 or newer.".format(sys.version_info[0], sys.version_info[1], sys.version_info[2]))
+    sys.exit(1)
 import argparse
 
 from commands import flashos
@@ -9,7 +12,7 @@ subparsers = parser.add_subparsers()
 
 parser_flashos = subparsers.add_parser('flashos', help='see `flashos -h`')
 parser_flashos.add_argument('-p', '--port', help='Serial port you want to flash (like: `/dev/tty.SLAB_USBtoUART`)')
-parser_flashos.add_argument('-b', '--bps', help='Speen in Serial communication(bps)', default='i')
+parser_flashos.add_argument('-b', '--bps', help='Speen in Serial communication(bps)', default='921600')
 parser_flashos.set_defaults(handler=flashos.command)
 
 parser_eraseos = subparsers.add_parser('eraseos', help='see `eraseos -h`')
