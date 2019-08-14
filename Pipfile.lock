@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "aadad2ec0e8e2d5d3fd15b4007ff947a6f985b3da337fe2a5ce6b9e6eff54f98"
+            "sha256": "24b56ba1d5537f82dddec63d9ba1399f5dc5ac4350e0210fab9f626781cf3439"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -30,10 +30,17 @@
             "index": "pypi",
             "version": "==2.7"
         },
+        "obniz-cli": {
+            "hashes": [
+                "sha256:2c5040f17898f74b28cc7c8725785c251a05c2d23dc6d7426e642a5b953e381b",
+                "sha256:bd3a52f022ec9fd577866dabe5574d479bd6a3a14f82d666f7ecd171a9952da3"
+            ],
+            "index": "pypi",
+            "version": "==0.0.1"
+        },
         "pyaes": {
             "hashes": [
-                "sha256:02c1b1405c38d3c370b085fb952dd8bea3fadcee6411ad99f312cc129c536d8f",
-                "sha256:25d97288fd7e69ead30b955991a82d496d2be66942f25ac5b37c8f3dad828762"
+                "sha256:02c1b1405c38d3c370b085fb952dd8bea3fadcee6411ad99f312cc129c536d8f"
             ],
             "version": "==1.6.1"
         },

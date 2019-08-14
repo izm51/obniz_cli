@@ -3,7 +3,7 @@ import sys
 import tempfile
 import subprocess
 
-import util
+from . import util
 
 def command(args):
     if args.port:

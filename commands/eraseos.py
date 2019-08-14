@@ -1,7 +1,7 @@
 import sys
 import subprocess
 
-import util
+from . import util
 
 def command(args):
     if args.port:
