@@ -13,7 +13,7 @@ Connect the ESP32 device from the serial port to your PC and check if the PC rec
 python -m serial.tools.list_ports
 ```
 (You can execute this command after `pip install obniz_cli`.)  
-In most cases, port name is `dev/cu,SLAB_USBtoUART` or like `COM3`. If you can't find these port or can find but fail to install, you may need USB-driver for devices from [here](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
+In most cases, port name is `dev/cu.SLAB_USBtoUART` or like `COM3`. If you can't find these port or can find but fail to install, you may need USB-driver for devices from [here](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
 
 ## Usage
 ### flashos
