@@ -7,12 +7,20 @@ Using pip,
 pip install obniz_cli
 ```
 
+## Preparation
+Connect the ESP32 device from the serial port to your PC and check if the PC recognizes the device. The following command shows the list of devices.
+```
+python -m serial.tools.list_ports
+```
+(You can execute this command after `pip install obniz_cli`.)  
+In most cases, port name is `dev/cu,SLAB_USBtoUART` or like `COM3`. If you can't find these port or can find but fail to install, you may need USB-driver for devices from [here](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers).
+
 ## Usage
 ### flashos
 ```
 obniz_cli flashos [-b] [-p]
 ```
-You can install obnizOS to your ESP32 device. If you execute without any option, it is displayed as follows:
+You can install obnizOS to your ESP32 device. If you execute without `-p` option, it is displayed as follows:
 ```
 0: /dev/cu.Bluetooth-Incoming-Port
 1: /dev/cu.SLAB_USBtoUART
