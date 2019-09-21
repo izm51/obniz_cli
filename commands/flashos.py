@@ -35,3 +35,8 @@ def command(args):
             shell=True,
             cwd=dirname
         )
+        proc = subprocess.run(
+                "python -m serial.tools.miniterm {} {}".format(selected_port, 115200),
+            shell=True,
+            cwd=dirname
+        )
