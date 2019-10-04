@@ -1,11 +1,23 @@
 import os
 import sys
+import json
+import datetime
 import tempfile
 import subprocess
 
 import requests
 
 from . import util
+
+def get_latest_release():
+    headers = {'Content-Type': 'application/json'}
+    resp = requests.get('https://api.github.com/repos/obniz/obnizos-esp32w/releases', headers=headers)
+    json_data = resp.json()
+    json_data.sort(
+        key=lambda x: datetime.datetime.fromisoformat(x['published_at'].replace('Z', '+00:00')),
+        reverse=True)
+    tag_name = json_data[0]['tag_name']
+    return tag_name
 
 def command(args):
     if args.port:
@@ -15,12 +27,14 @@ def command(args):
 
     # obnizOSのクローンおよび更新
     print()
+    latest_release = get_latest_release()
     ## 一時ファイルにobnizOSをクローンしてくる
     with tempfile.TemporaryDirectory() as dirname:
         filenames = ['bootloader.bin', 'obniz.bin', 'partitions.bin']
         for file in filenames:
             print("Downloading {}...".format(file))
-            resp = requests.get("https://raw.github.com/obniz/obnizos-esp32w/master/" + file)
+            
+            resp = requests.get("https://raw.github.com/obniz/obnizos-esp32w/{}/{}".format(latest_release, file))
             save_to = os.path.join(dirname, file)
             if resp.ok:
                 with open(save_to, 'wb') as save_file:
