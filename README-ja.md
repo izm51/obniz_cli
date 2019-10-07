@@ -34,6 +34,7 @@ Select NUMBER from above list(or if you want to cancel, input N key):
 
 ポートが選択されると、最新のobnizOSをダウンロードしたのち、ターゲットへインストールされます。デフォルトでは、通信速度が921600bpsに設定されていますが、うまく書き込めない場合には`-b`オプションを用いて通信速度を落としてみてください：`obniz_cli flashos -b 115200`。
 
+インストール完了後は、自動的にobnizOSの設定のための通信に移ります。
 ### eraseos
 ```
 obniz_cli eraseos [-p]
