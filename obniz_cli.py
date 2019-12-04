@@ -4,13 +4,14 @@ if sys.version_info[0] == 2:
     sys.exit(1)
 import argparse
 
+from obniz_cli_.__version__ import __version__ as version
 from commands import flashos
 from commands import eraseos
 
 parser = argparse.ArgumentParser()
 subparsers = parser.add_subparsers()
 
-parser.add_argument('--version', action='version', version='0.0.5')
+parser.add_argument('--version', action='version', version=version)
 
 parser_flashos = subparsers.add_parser('flashos', help='see `flashos -h`')
 parser_flashos.add_argument('-p', '--port', help='Serial port you want to flash (like: `/dev/tty.SLAB_USBtoUART`)')
