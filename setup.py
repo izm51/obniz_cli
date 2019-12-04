@@ -3,10 +3,12 @@ from codecs import open
 from os import path
 import re
 
+root_dir = path.abspath(path.dirname(__file__))
+
 with open("README.md", "r") as f:
     long_description = f.read()
 
-with open('__version__.py') as f:
+with open(path.join(root_dir, 'obniz_cli_', '__version__.py')) as f:
     init_text = f.read()
     version = re.search(r'__version__\s*=\s*[\'\"](.+?)[\'\"]', init_text).group(1)
 
