@@ -13,9 +13,7 @@ def get_latest_release():
     headers = {'Content-Type': 'application/json'}
     resp = requests.get('https://api.github.com/repos/obniz/obnizos-esp32w/releases', headers=headers)
     json_data = resp.json()
-    json_data.sort(
-        key=lambda x: datetime.datetime.fromisoformat(x['published_at'].replace('Z', '+00:00')),
-        reverse=True)
+    json_data.sort(key=lambda x: x['published_at'], reverse=True)
     tag_name = json_data[0]['tag_name']
     return tag_name
 
