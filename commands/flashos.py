@@ -43,7 +43,7 @@ def command(args):
         # obnizOSの書き込み
         print()
         proc = subprocess.run(
-            "esptool.py --port {} -b {} --after hard_reset write_flash 0x1000 bootloader.bin 0x10000 obniz.bin 0x8000 partitions.bin".format(selected_port, args.bps),
+            "python -m esptool --port {} -b {} --after hard_reset write_flash 0x1000 bootloader.bin 0x10000 obniz.bin 0x8000 partitions.bin".format(selected_port, args.bps),
             shell=True,
             cwd=dirname
         )

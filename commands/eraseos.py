@@ -21,6 +21,6 @@ def command(args):
 
     print()
     proc = subprocess.run(
-        "esptool.py --port {} erase_flash".format(selected_port),
+        "python -m esptool --port {} erase_flash".format(selected_port),
         shell=True
     )
